@@ -1,0 +1,14 @@
+
+h1
+  = @article.title
+  .pull-right
+    = link_to 'Edit', edit_article_path(@article), class: 'btn btn-default'
+
+hr
+strong = @article.category.name
+.pull-right <b>Tempo de leitura:</b> Cerca de <b>#{time_to_read(@article.body)}</b>
+p = "Escrito por #{@article.author}"
+p = l @article.published_at
+p = img @article.image.regular if @article.image?
+= simple_format @article.body
+

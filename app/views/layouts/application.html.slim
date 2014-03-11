@@ -1,0 +1,36 @@
+doctype
+html
+  head
+    meta name="viewport" content="width=device-width, initial-scale=1"
+    title Paporeto
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = csrf_meta_tags
+
+    /if lt IE 9]
+      = javascript_include_tag "html5shiv", "data-turbolinks-track" => true
+      = javascript_include_tag "respond.min", "data-turbolinks-track" => true
+
+    body
+      - if user_signed_in?
+        .navbar.navbar-inverse.navbar-fixed-top
+         .container
+           .navbar-header
+             = link_to 'Paporeto', root_path, class: 'navbar-brand'
+           .navbar-collapse
+             ul.nav.navbar-nav
+                li class="#{nav_status('articles')}" = link_to 'Artigos', articles_path
+                li class="#{nav_status('categories')}" = link_to 'Categorias', categories_path
+                li class="#{nav_status('users')}" = link_to 'Usuários', users_path
+             ul.nav.navbar-nav.pull-right
+                li class="#{nav_status_users('users','edit')}"= link_to current_user.name, edit_user_path(current_user)
+                li = link_to 'Sair', destroy_user_session_path, method: :delete
+
+
+    .container
+      - if notice
+        .alert.alert-info.alert-dismissable
+          button type="button" class="close" data-dismiss="alert" aria-hidden="true" &times;
+          = notice
+
+      = yield
+    = javascript_include_tag "application", "data-turbolinks-track" => true
