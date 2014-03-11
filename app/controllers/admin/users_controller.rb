@@ -1,6 +1,8 @@
-class UsersController < ApplicationController
+class Admin::UsersController < ApplicationController
   before_action :set_user, only: [:edit, :update, :destroy]
   before_action :authenticate_user!
+
+  layout 'admin'
 
   # GET /users
   def index
@@ -21,7 +23,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to users_url
+      redirect_to admin_users_url
     else
       render action: 'new'
     end
@@ -39,7 +41,7 @@ class UsersController < ApplicationController
       if @user == current_user
         sing_in(@user, baypass: true)
       end
-      redirect_to users_url
+      redirect_to admin_users_url
     else
       render action: 'edit'
     end
@@ -48,7 +50,7 @@ class UsersController < ApplicationController
   # DELETE /users/1
   def destroy
     @user.destroy
-    redirect_to users_url, notice: 'Usuário excluído.'
+    redirect_to admin_users_url, notice: 'Usuário excluído.'
   end
 
   private

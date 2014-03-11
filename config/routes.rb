@@ -1,13 +1,16 @@
 Paporeto::Application.routes.draw do
+
   mount Uploadbox::Engine => '/uploadbox', as: :uploadbox
   devise_for :users
-  resources :categories, excepte: :show
 
-  resources :articles
-  resources :users, excepte: :show
+  namespace :admin do
+    resources :categories, excepte: :show
+    resources :articles
+    resources :users, excepte: :show
+    root 'articles#index'
+  end
 
-  root 'articles#index'
-
+  root 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
