@@ -1,17 +1,64 @@
-body
-    .container
-      .header
-        ul.nav.nav-pills.pull-right
-          li
-            a href="#"  Esportes
-          li
-            a href="#"  Entretenimento
-          li
-            a href="#"  Notícias
-        h3.text-muted Paporeto
-      .jumbotron
-        h1 Em breve seu novo portal
-        p.lead Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      .footer
-        p &copy; Paporeto 2014
+- @page_class= 'home'
+
+section#featured-article
+  article.esportes
+    = image_tag 'temp/featured-home.jpg', onload: "this.parentNode.style.backgroundImage = 'url('+this.src+')'"
+    .article-inner
+      = link_to '#' do
+        .category Esportes
+        h1 Lyoto Machida garante que está preparado para UFC Rio
+
+section#more-articles
+  section.category.noticias
+    = link_to '#' do
+      h1 Notícias
+    article.featured
+      = link_to '#' do
+        = image_tag 'temp/regular.jpg', width: 260, height: 196
+        h2 Skateboarding Aenean eu leo quam. Pellentesque ornare sem lacinia.
+    article
+      = link_to '#' do
+        = image_tag 'temp/thumb.jpg', width: 90, height: 80
+        h2 Vá de bike Donec id elit non mi porta gravida at eget metus...
+    article
+      = link_to '#' do
+        = image_tag 'temp/thumb.jpg', width: 90, height: 80
+        h2 Vá de bike Donec id elit non mi porta gravida at eget metus...
+
+
+  section.category.esportes
+    = link_to '#' do
+      h1 Esportes
+    article.featured
+      = link_to '#' do
+        = image_tag 'temp/regular.jpg', width: 260, height: 196
+        h2 Skateboarding Aenean eu leo quam. Pellentesque ornare sem lacinia.
+    article
+      = link_to '#' do
+        = image_tag 'temp/thumb.jpg', width: 90, height: 80
+        h2 Vá de bike Donec id elit non mi porta gravida at eget metus...
+    article
+      = link_to '#' do
+        = image_tag 'temp/thumb.jpg', width: 90, height: 80
+        h2 Vá de bike Donec id elit non mi porta gravida at eget metus...
+
+
+  section.category.entretenimento
+    = link_to '#' do
+      h1 Entretenimento
+    article.featured
+      = link_to '#' do
+        = image_tag 'temp/regular.jpg', width: 260, height: 196
+        h2 Skateboarding Aenean eu leo quam. Pellentesque ornare sem lacinia.
+    article
+      = link_to '#' do
+        = image_tag 'temp/thumb.jpg', width: 90, height: 80
+        h2 Vá de bike Donec id elit non mi porta gravida at eget metus...
+    article
+      = link_to '#' do
+        = image_tag 'temp/thumb.jpg', width: 90, height: 80
+        h2 Vá de bike Donec id elit non mi porta gravida at eget metus...
+
+= render 'shared/send_news'
+
 
