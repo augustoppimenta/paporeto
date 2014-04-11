@@ -4,6 +4,7 @@
   .form-inputs
     = f.uploads_one :image, preview: :regular
     = f.input :title
+    = f.input :summary
     = f.association :category, prompt: 'Selecione'
     = f.input :body
     = f.input :author
