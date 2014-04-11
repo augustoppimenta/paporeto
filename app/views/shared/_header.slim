@@ -5,6 +5,5 @@ header#page-header
 
     nav#page-nav
       ul
-        li class="esportes" = link_to 'Esportes', '#'
-        li class="noticias" = link_to 'Notícias', '#'
-        li class="entretenimento" = link_to 'Entretenimento', '#'
+        - @categories.each do |category|
+          li class="#{category.name.parameterize}" = link_to category.name, category_articles_path(category)

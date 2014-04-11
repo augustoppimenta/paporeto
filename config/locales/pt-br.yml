@@ -196,7 +196,7 @@ pt-BR:
   time:
     am: ''
     formats:
-      default: ! '%A, %d de %B de %Y às %H:%Mh'
+      default: ! '%d de %B de %Y às %Hh%M'
       long: ! '%A, %d de %B de %Y, %H:%M h'
       complete_date: ! '%A, %d de %B de %Y'
       short: ! '%d %b %Y, %H:%M h'
