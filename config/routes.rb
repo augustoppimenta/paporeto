@@ -15,8 +15,8 @@ Paporeto::Application.routes.draw do
   #Public ------------------------------------------------------------------------------------------------------------------------
 
   #Categories/Articles
-  resources :categories, only: [] do
-    resources :articles,  only: [:index , :show]
+  resources :categories, path: '', only: [] do
+    resources :articles, path: '',only: [:index , :show]
   end
 
   #HomePage
