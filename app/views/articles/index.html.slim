@@ -13,13 +13,6 @@ section.latest-articles
   .latest-articles-inner
     h1 Últimas notícias
 
-    - @articles.each do |article|
-      article
-        = link_to [@category, article] do
-          = img article.image.thumb if article.image?
-          h2 = article.title
-          p = truncate(article.summary, lenght: 30)
-
-
+    = render @articles
 
 = render 'shared/send_news'
