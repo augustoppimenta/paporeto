@@ -22,14 +22,7 @@
     section#more-articles
       section.category
         h1 = @category.name
-        article.featured
-          = link_to do
-            h2 Skateboarding Aenean eu leo quam. Pellentesque ornare sem lacinia.
-        article
-          = link_to do
-            h2 Standup Pedal non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec.
-        article
-          = link_to do
-            h2 Standup Pedal non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec.
+
+        = render partial: 'related_articles', collection: @related_articles
 
     = render 'shared/send_news'
