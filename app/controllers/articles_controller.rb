@@ -4,6 +4,7 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = @category.articles.limit(8)
+    @featured_article = @category.articles.featured
   end
 
   def show

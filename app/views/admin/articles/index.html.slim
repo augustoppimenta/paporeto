@@ -6,6 +6,7 @@ table.table.table-striped
       th Título
       th Publicado em
       th Categoria
+      th Destaque
       th
 
   tbody
@@ -14,6 +15,7 @@ table.table.table-striped
         td = article.title
         td = l article.published_at
         td = article.category.name
+        td = article.featured ? 'Sim' : 'Não'
         td
           .btn-group.pull-right
             = link_to 'Ver', [:admin, article], class: 'btn btn-default btn-sm'
