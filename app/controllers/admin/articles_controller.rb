@@ -6,7 +6,7 @@ class Admin::ArticlesController < ApplicationController
 
   # GET /articles
   def index
-    @articles = Article.order(featured: :desc).order(published_at: :desc).order(:title)
+    @articles = Article.order(featured_at_home: :desc).order(featured: :desc).order(published_at: :desc).order(:title)
   end
 
   # GET /articles/1
@@ -56,6 +56,6 @@ class Admin::ArticlesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def article_params
-      params.require(:article).permit(:title, :body, :published_at, :category_id, :image, :author, :summary, :featured)
+      params.require(:article).permit(:title, :body, :published_at, :category_id, :image, :author, :summary, :featured, :featured_at_home)
     end
 end

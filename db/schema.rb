@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140429194728) do
+ActiveRecord::Schema.define(version: 20140430011920) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -22,11 +22,13 @@ ActiveRecord::Schema.define(version: 20140429194728) do
     t.integer  "category_id"
     t.string   "author"
     t.text     "summary"
-    t.boolean  "featured",     default: false
+    t.boolean  "featured",         default: false
+    t.boolean  "featured_at_home", default: false
   end
 
   add_index "articles", ["category_id"], name: "index_articles_on_category_id"
   add_index "articles", ["featured"], name: "index_articles_on_featured"
+  add_index "articles", ["featured_at_home"], name: "index_articles_on_featured_at_home"
 
   create_table "categories", force: true do |t|
     t.string   "name"

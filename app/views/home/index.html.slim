@@ -1,12 +1,7 @@
 - @page_class= 'home'
 
 section#featured-article
-  article.esportes
-    = image_tag 'temp/featured-home.jpg', onload: "this.parentNode.style.backgroundImage = 'url('+this.src+')'"
-    .article-inner
-      = link_to '#' do
-        .category Esportes
-        h1 Lyoto Machida garante que está preparado para UFC Rio
+  = render partial: 'home/featured_at_home', object: @featured_at_home
 
 section#more-articles
   = render partial: 'home/category', collection: @categories

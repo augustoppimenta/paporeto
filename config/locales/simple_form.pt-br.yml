@@ -23,6 +23,7 @@ pt-BR:
         category: Categoria
         author: Autor
         featured: Destaque
+        featured_at_home: Destaque na Home
     # hints:
     #   defaults:
     #     password: 'Mínimo de 8 caracteres.'

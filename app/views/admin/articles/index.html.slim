@@ -7,6 +7,7 @@ table.table.table-striped
       th Publicado em
       th Categoria
       th Destaque
+      th Home
       th
 
   tbody
@@ -16,6 +17,7 @@ table.table.table-striped
         td = l article.published_at
         td = article.category.name
         td = article.featured ? 'Sim' : 'Não'
+        td = article.featured_at_home ? 'Sim' : 'Não'
         td
           .btn-group.pull-right
             = link_to 'Ver', [:admin, article], class: 'btn btn-default btn-sm'
