@@ -9,4 +9,8 @@ class Category < ActiveRecord::Base
   def slug
     name.parameterize
   end
+
+  def featured_article
+    articles.where( featured: true).first
+  end
 end
