@@ -5,4 +5,8 @@ class Category < ActiveRecord::Base
   def to_param
     "#{id} #{name}".parameterize
   end
+
+  def slug
+    name.parameterize
+  end
 end
