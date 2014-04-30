@@ -1,0 +1,8 @@
+section.category class="#{category.slug}"
+    = link_to '#' do
+      h1 = category.name
+
+    = render partial: 'home/featured_article', object: category.articles.where( featured: true).first
+
+
+    = render partial: 'home/article', collection: category.articles.limit(3)
