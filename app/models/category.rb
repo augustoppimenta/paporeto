@@ -13,4 +13,8 @@ class Category < ActiveRecord::Base
   def featured_article
     articles.where( featured: true).first
   end
+
+  def featured_article_show
+    articles.where( featured: false)
+  end
 end
